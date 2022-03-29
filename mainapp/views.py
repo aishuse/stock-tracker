@@ -10,12 +10,12 @@ def stockPicker(request):
     # return render(request, 'mainapp/stockpicker.html')
     stock_picker = tickers_nifty50()
     print(stock_picker)
-    return render(request, 'mainapp/stockpicker.html', {'stockpicker':stock_picker})
+    return render(request, 'mainapp/stockpicker.html', {'stockpicker': stock_picker})
 
 
 def stockTracker(request):
     stockpicker = request.GET.getlist('stockpicker')
-    print(stockpicker)
+    print("stockpicked values are ",stockpicker)
     data = {}
     available_stocks =tickers_nifty50()
     for i in stockpicker:
